@@ -123,11 +123,11 @@ class postgresql::server::config {
 
   }
   # Allow timestamps in log by default
-  if $log_line_prefix {
-    postgresql::server::config_entry {'log_line_prefix':
-      value => $log_line_prefix,
-    }
-  }
+  #  if $log_line_prefix {
+  #  postgresql::server::config_entry {'log_line_prefix':
+  #    value => $log_line_prefix,
+  #  }
+  #}
 
   # RedHat-based systems hardcode some PG* variables in the init script, and need to be overriden
   # in /etc/sysconfig/pgsql/postgresql. Create a blank file so we can manage it with augeas later.
