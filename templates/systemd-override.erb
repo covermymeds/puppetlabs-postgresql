@@ -1,5 +1,7 @@
 <%- if scope.lookupvar('::osfamily') == 'Gentoo' -%>
 .include /usr/lib64/systemd/system/<%= @service_name %>.service
+<%- elsif scope.lookupvar('::operatingsystem') == 'RedHat' -%>
+.include /lib/systemd/system/postgresql-<%= @service_name %>.service
 <%- elsif scope.lookupvar('::operatingsystem') == 'Fedora' -%>
 .include /lib/systemd/system/<%= @service_name %>.service
 <% else -%>
